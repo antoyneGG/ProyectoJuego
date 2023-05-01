@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/wumpa.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/bichito.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Area2D.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 73, 63 )
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 182.0
+
+[sub_resource type="CircleShape2D" id=9]
+radius = 80.0062
+
+[node name="wumpa" type="KinematicBody2D"]
+position = Vector2( 559, 260 )
+collision_layer = 2
+collision_mask = 9
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -3, -2 )
+scale = Vector2( 0.520833, 0.525 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -3, -3 )
+shape = SubResource( 7 )
+
+[node name="DetectionZone" type="Area2D" parent="."]
+visible = false
+collision_layer = 16
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionZone"]
+shape = SubResource( 8 )
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource( 9 )
+
+[connection signal="body_entered" from="DetectionZone" to="DetectionZone" method="_on_DetectionZone_body_entered"]
+[connection signal="body_exited" from="DetectionZone" to="DetectionZone" method="_on_DetectionZone_body_exited"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="area_entered" from="Hurtbox" to="Hurtbox" method="_on_Hurtbox_area_entered"]
