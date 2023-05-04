@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Tiles/Hearts/PNG/health_bar/health_bar_decoration.png" type="Texture" id=1]
+[ext_resource path="res://Tiles/Hearts/PNG/health_bar/health_bar.png" type="Texture" id=2]
+
+[node name="Control" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="HealthBar" type="TextureProgress" parent="."]
+margin_left = 13.0
+margin_top = 11.0
+margin_right = 207.0
+margin_bottom = 102.0
+value = 100.0
+texture_under = ExtResource( 1 )
+texture_progress = ExtResource( 2 )
+texture_progress_offset = Vector2( 14, 0 )

@@ -17,7 +17,7 @@ extents = Vector2( 398.5, 66.25 )
 position = Vector2( 0, -1 )
 
 [node name="kirby" parent="." instance=ExtResource( 1 )]
-position = Vector2( 272, 366 )
+position = Vector2( 282, 395 )
 collision_mask = 30
 
 [node name="wumpa" parent="." instance=ExtResource( 5 )]
@@ -59,11 +59,3 @@ texture = ExtResource( 4 )
 position = Vector2( 60, 99 )
 collision_mask = 9
 script = ExtResource( 7 )
-
-[node name="Control" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="ProgressBar" type="ProgressBar" parent="Control"]
-margin_right = 4.0
-margin_bottom = 14.0
