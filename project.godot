@@ -64,6 +64,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/github-integration/scripts/GistItem.gd"
 }, {
+"base": "EditorVCSInterface",
+"class": "GitAPI",
+"language": "NativeScript",
+"path": "res://addons/godot-git-plugin/git_api.gdns"
+}, {
 "base": "Decorator",
 "class": "InverterDecorator",
 "language": "GDScript",
@@ -121,6 +126,7 @@ _global_script_class_icons={
 "ContributorClass": "",
 "Decorator": "res://addons/beehave/icons/category_decorator.svg",
 "GistItem": "",
+"GitAPI": "",
 "InverterDecorator": "res://addons/beehave/icons/inverter.svg",
 "InvitationItem": "",
 "Leaf": "res://addons/beehave/icons/action.svg",
@@ -138,16 +144,18 @@ config/name="Donarudo"
 run/main_scene="res://Scenes/Scenebeta.tscn"
 config/icon="res://Sprites/icon.png"
 
-[autoload]
+[editor]
 
-PluginSettings="*res://addons/github-integration/scripts/PluginSettings.gd"
-IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
-UserData="*res://addons/github-integration/scripts/user_data.gd"
-RestHandler="*res://addons/github-integration/scenes/RestHandler.tscn"
+version_control_autoload_on_startup=true
+version_control_plugin_name="GitAPI"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/SpriteSheetImporter/plugin.cfg", "res://addons/beehave/plugin.cfg", "res://addons/github-integration/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/SpriteSheetImporter/plugin.cfg", "res://addons/beehave/plugin.cfg" )
+
+[gdnative]
+
+singletons=[ "res://addons/godot-git-plugin/git_api.gdnlib" ]
 
 [gui]
 

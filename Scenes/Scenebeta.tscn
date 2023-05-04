@@ -56,6 +56,6 @@ scale = Vector2( 5.02044, 4.17188 )
 texture = ExtResource( 4 )
 
 [node name="DrawciSorcerer" parent="." instance=ExtResource( 3 )]
-position = Vector2( 60, 99 )
+position = Vector2( 730, 163 )
 collision_mask = 9
 script = ExtResource( 7 )
