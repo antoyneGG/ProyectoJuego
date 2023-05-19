@@ -38,7 +38,6 @@ tracks/0/keys = {
 }
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
-scale = Vector2( 2.5, 2.5 )
 collision_layer = 2
 __meta__ = {
 "_edit_group_": true
