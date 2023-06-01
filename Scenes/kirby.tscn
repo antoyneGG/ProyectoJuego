@@ -1,13 +1,20 @@
 [gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://Scripts/KinematicBody2D.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/_Attack.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/_Idle.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/_DeathNoMovement.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/_Run.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/_Jump.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/_JumpFallInbetween.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/_Fall.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/player/_Attack.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/player/_Idle.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/player/_DeathNoMovement.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/player/_Run.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/player/_Jump.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/player/_JumpFallInbetween.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/player/_Fall.png" type="Texture" id=8]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 14.5, 20.5 )
+
+[sub_resource type="CapsuleShape2D" id=7]
+radius = 23.0
+height = 2.0
 
 [sub_resource type="AtlasTexture" id=55]
 flags = 4
@@ -257,14 +264,7 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 14.5, 20.5 )
-
-[sub_resource type="CapsuleShape2D" id=7]
-radius = 23.0
-height = 2.0
-
-[node name="kirby" type="KinematicBody2D"]
+[node name="kirby" type="KinematicBody2D" groups=["player"]]
 position = Vector2( 0, -4 )
 z_as_relative = false
 collision_mask = 14
@@ -272,12 +272,6 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0, -19 )
-frames = SubResource( 6 )
-frame = 7
-playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 5 )
@@ -303,5 +297,12 @@ collision_mask = 256
 position = Vector2( 50, -2 )
 shape = SubResource( 7 )
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -19 )
+frames = SubResource( 6 )
+frame = 8
+playing = true
+
+[connection signal="area_entered" from="Position2D/HitBox" to="." method="_on_HitBox_area_entered"]
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="frame_changed" from="AnimatedSprite" to="." method="_on_AnimatedSprite_frame_changed"]

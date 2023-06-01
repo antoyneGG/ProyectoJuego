@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/snowman.png-a6ad0fc619fcecd359b66193931b43fb.stex"
+path="res://.import/_Attack.png-e9eca54705b45fe703d95a5844a45525.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/snowman.png"
-dest_files=[ "res://.import/snowman.png-a6ad0fc619fcecd359b66193931b43fb.stex" ]
+source_file="res://Sprites/player/_Attack.png"
+dest_files=[ "res://.import/_Attack.png-e9eca54705b45fe703d95a5844a45525.stex" ]
 
 [params]
 

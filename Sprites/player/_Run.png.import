@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/_JumpFallInbetween.png-814f8f09c7aefce47f92b24ebc4b2fea.stex"
+path="res://.import/_Run.png-9c88fda46913cb910e487a9d46a55bf0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/_JumpFallInbetween.png"
-dest_files=[ "res://.import/_JumpFallInbetween.png-814f8f09c7aefce47f92b24ebc4b2fea.stex" ]
+source_file="res://Sprites/player/_Run.png"
+dest_files=[ "res://.import/_Run.png-9c88fda46913cb910e487a9d46a55bf0.stex" ]
 
 [params]
 

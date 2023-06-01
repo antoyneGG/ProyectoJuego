@@ -2,8 +2,6 @@ extends KinematicBody2D
 
 
 # Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var vel = Vector2.ZERO
 const SPEED = 200
 const ACC = 190
@@ -13,20 +11,26 @@ const JUMP = 200
 var input_vector = Vector2.ZERO
 var salto = 0
 
+# State machine
 var current_state
-
-var animatedSprite
-
-var collHB
-
-var coll
-
-var posHB
-
 enum{
 	ATTACK,
 	MOVE
 }
+
+# Animation
+var animatedSprite
+
+# Collition
+var collHB
+var coll
+var posHB
+var hitbox
+
+# Stats
+const meleeDMG = [10, 20, 30, 40, 50]
+var HP = 100
+var level = 1
 
 
 # Called when the node enters the scene tree for the first time.
@@ -36,6 +40,7 @@ func _ready():
 	collHB = $Position2D/HitBox/CollisionShape2D
 	posHB = $Position2D
 	coll = $CollisionShape2D
+	hitbox = $Position2D/HitBox
 	current_state = MOVE
 	collHB.set_disabled(true)
 	
@@ -97,15 +102,20 @@ func attacking():
 	animatedSprite.play("pelea")
 
 func _on_AnimatedSprite_frame_changed():
-	print("muri")
 	if(animatedSprite.get_animation() == "pelea"):
 		if(animatedSprite.frame in [1, 2]):
 			collHB.set_disabled(false)
 		else:
 			collHB.set_disabled(true)
 
-
 func _on_AnimatedSprite_animation_finished():
 	if(animatedSprite.get_animation() == "pelea"):
 		animatedSprite.play("default")
 		current_state = MOVE
+		
+
+
+
+func _on_HitBox_area_entered(area):
+	if area.get_collision_layer() == 256:
+		area.owner.take_damage(meleeDMG[level - 1])

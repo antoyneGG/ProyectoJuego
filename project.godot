@@ -142,7 +142,6 @@ _global_script_class_icons={
 
 config/name="Donarudo"
 run/main_scene="res://Scenes/Scenebeta.tscn"
-config/icon="res://Sprites/icon.png"
 
 [editor]
 

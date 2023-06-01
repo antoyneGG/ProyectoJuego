@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spritesheet.png-8d1e45e7c563b1fc59afddcd8efeb8ef.stex"
+path="res://.import/fire-skull.png-7e80f7997855efd6bd779cb259e73ae8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/spritesheet.png"
-dest_files=[ "res://.import/spritesheet.png-8d1e45e7c563b1fc59afddcd8efeb8ef.stex" ]
+source_file="res://Sprites/enemies/fire-skull.png"
+dest_files=[ "res://.import/fire-skull.png-7e80f7997855efd6bd779cb259e73ae8.stex" ]
 
 [params]
 

@@ -9,7 +9,6 @@ var continous = 0
 var current_state = 0
 var dir = 0
 var init_pos
-onready var animationDS = $AnimationPlayer
 
 enum{
 	IDLE,
@@ -31,7 +30,6 @@ func _physics_process(delta):
 		IDLE:
 			pass
 		PATROL:
-			animationDS.play("IDOL")
 			to = patrol()
 		CHASE:
 			pass
