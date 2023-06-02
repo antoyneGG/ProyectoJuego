@@ -11,6 +11,7 @@ const JUMP = 200
 var input_vector = Vector2.ZERO
 var salto = 0
 
+
 # State machine
 var current_state
 enum{
@@ -114,8 +115,11 @@ func _on_AnimatedSprite_animation_finished():
 		current_state = MOVE
 		
 
-
-
 func _on_HitBox_area_entered(area):
 	if area.get_collision_layer() == 256:
 		area.owner.take_damage(meleeDMG[level - 1])
+		
+		
+# Se debe que llamar esta funcion dentro de "hurtbox para recibir el daño
+func damage_player(damage):
+	HP -= damage

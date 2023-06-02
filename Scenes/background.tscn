@@ -12,11 +12,12 @@
 [ext_resource path="res://Tiles/Background layers/Layer_0005_5.png" type="Texture" id=10]
 
 [node name="Sprite" type="Sprite"]
+scale = Vector2( 1.5, 1.5 )
 
 [node name="Layer00092" type="Sprite" parent="."]
 light_mask = 0
 position = Vector2( 514, 278.5 )
-scale = Vector2( 1.125, 0.810845 )
+scale = Vector2( 1.5, 1.5 )
 z_index = 2
 texture = ExtResource( 7 )
 __meta__ = {
@@ -25,8 +26,8 @@ __meta__ = {
 
 [node name="Layer00083" type="Sprite" parent="."]
 light_mask = 0
-position = Vector2( 525.5, 150 )
-scale = Vector2( 1.14332, 1.21059 )
+position = Vector2( 518.667, 175 )
+scale = Vector2( 1.50718, 1.91929 )
 z_index = 2
 texture = ExtResource( 3 )
 __meta__ = {
@@ -35,8 +36,8 @@ __meta__ = {
 
 [node name="Layer0007Lights" type="Sprite" parent="."]
 light_mask = 0
-position = Vector2( 701, 162 )
-scale = Vector2( 1.23815, 0.56652 )
+position = Vector2( 665.667, 240.667 )
+scale = Vector2( 1.5, 1.5 )
 z_index = 2
 texture = ExtResource( 1 )
 __meta__ = {
@@ -45,8 +46,8 @@ __meta__ = {
 
 [node name="Layer00064" type="Sprite" parent="."]
 light_mask = 0
-position = Vector2( 565, 104.5 )
-scale = Vector2( 1.15733, 1.32282 )
+position = Vector2( 519.667, 108 )
+scale = Vector2( 1.49641, 2.16562 )
 z_index = 2
 texture = ExtResource( 6 )
 __meta__ = {
@@ -55,8 +56,8 @@ __meta__ = {
 
 [node name="Layer00055" type="Sprite" parent="."]
 light_mask = 0
-position = Vector2( 503, 93 )
-scale = Vector2( 1.21121, 1.40731 )
+position = Vector2( 521.333, 79.6667 )
+scale = Vector2( 1.51868, 2.20345 )
 z_index = 2
 texture = ExtResource( 10 )
 __meta__ = {
@@ -65,8 +66,8 @@ __meta__ = {
 
 [node name="Layer0004Lights" type="Sprite" parent="."]
 light_mask = 0
-position = Vector2( 436, 150 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 472.667, 150 )
+scale = Vector2( 1.5, 1.5 )
 z_index = 2
 texture = ExtResource( 5 )
 __meta__ = {
@@ -75,8 +76,8 @@ __meta__ = {
 
 [node name="Layer00036" type="Sprite" parent="."]
 light_mask = 0
-position = Vector2( 494.5, 75 )
-scale = Vector2( 1.13685, 1.44262 )
+position = Vector2( 512.667, 113.333 )
+scale = Vector2( 1.53879, 2.15553 )
 z_index = 2
 texture = ExtResource( 2 )
 __meta__ = {
@@ -85,8 +86,8 @@ __meta__ = {
 
 [node name="Layer00027" type="Sprite" parent="."]
 light_mask = 0
-position = Vector2( 515, 137 )
-scale = Vector2( 1.1417, 0.734277 )
+position = Vector2( 521.667, 143.792 )
+scale = Vector2( 1.52227, 1.51713 )
 z_index = 2
 texture = ExtResource( 8 )
 __meta__ = {
@@ -96,7 +97,7 @@ __meta__ = {
 [node name="Layer00018" type="Sprite" parent="."]
 light_mask = 0
 position = Vector2( 513, 326.5 )
-scale = Vector2( 1.10776, 0.679697 )
+scale = Vector2( 1.5, 1.5 )
 z_index = 2
 texture = ExtResource( 4 )
 __meta__ = {
@@ -105,8 +106,8 @@ __meta__ = {
 
 [node name="Layer00009" type="Sprite" parent="."]
 light_mask = 0
-position = Vector2( 515.5, 310.5 )
-scale = Vector2( 1.11315, 0.740227 )
+position = Vector2( 520.417, 318.875 )
+scale = Vector2( 1.5106, 1.52112 )
 z_index = 2
 texture = ExtResource( 9 )
 __meta__ = {

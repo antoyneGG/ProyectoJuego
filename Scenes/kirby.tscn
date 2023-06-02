@@ -300,7 +300,7 @@ shape = SubResource( 7 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -19 )
 frames = SubResource( 6 )
-frame = 8
+frame = 2
 playing = true
 
 [connection signal="area_entered" from="Position2D/HitBox" to="." method="_on_HitBox_area_entered"]
