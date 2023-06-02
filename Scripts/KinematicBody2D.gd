@@ -151,6 +151,7 @@ func death():
 	if(animatedSprite.frame != 9):
 		vel = vel.move_toward(Vector2.ZERO, 0)
 		vel.x = 0
+		get_tree().change_scene("res://Scenes/Game Over.tscn")
 	else:
 		hide()
 

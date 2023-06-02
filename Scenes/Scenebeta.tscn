@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scenes/kirby.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/enemies/zerotu.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scenes/barraSalud.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Sounds/OST_level.mp3" type="AudioStream" id=10]
 [ext_resource path="res://Scenes/nightborne.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/fallingGameOver.gd" type="Script" id=12]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 193.313, 118.375 )
@@ -256,6 +257,9 @@ points = PoolVector2Array( 0, 30.7639, 52.4919, 31.0879, 52.4919, 38.5399, 0, 38
 [sub_resource type="RectangleShape2D" id=29]
 extents = Vector2( 5, 45.5 )
 
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 162, 15.25 )
+
 [node name="Scenebeta" type="Node2D"]
 position = Vector2( 0, -1 )
 __meta__ = {
@@ -348,3 +352,12 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="paredEnemigo"]
 position = Vector2( 1234, 432 )
 shape = SubResource( 29 )
+
+[node name="fallingGameOver" type="Area2D" parent="."]
+script = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fallingGameOver"]
+position = Vector2( 1127, 617 )
+shape = SubResource( 30 )
+
+[connection signal="body_entered" from="fallingGameOver" to="fallingGameOver" method="_on_fallingGameOver_body_entered"]
