@@ -13,9 +13,12 @@ var knockbar_vector = Vector2.ZERO
 var knockbar_force = 10
 onready var decZ = $DetectionZone
 onready var hurtbox = $Hurtbox
-onready var player = get_tree().get_nodes_in_group("player")[0]
+onready var animatedSprite = $AnimatedSprite
+onready var sound = $dmgSound
+onready var playerK = get_tree().get_nodes_in_group("player")[0]
 
 # Stats
+const experience = 5
 const dmg = 10
 var health = 40
 
@@ -51,6 +54,10 @@ func _physics_process(delta):
 	vel = move_and_slide(vel, Vector2.UP)
 	var collision = move_and_slide(knockbar_vector)
 	knockbar_vector = lerp(knockbar_vector, Vector2.ZERO, 0.2)
+	if(vel.x < 0):
+		animatedSprite.flip_h = false
+	elif(vel.x > 0):
+		animatedSprite.flip_h = true
 	continous += 1
 
 func chase():
@@ -81,14 +88,16 @@ func search_for_player():
 func take_damage(income_dmg):
 	health -= income_dmg
 	print("Me queda %d de vida" % health)
-	knockbar_vector = (global_position - player.global_position) * knockbar_force
+	knockbar_vector = (global_position - playerK.global_position) * knockbar_force
 	if(health <= 0):
 		dead()
 
 func dead():
+	playerK.getExp(experience)
 	queue_free()
 
 
 func _on_Hurtbox_area_entered(area):
 	if area.get_collision_layer() == 64:
+		sound.play(0.86)
 		area.owner.take_damage(dmg)

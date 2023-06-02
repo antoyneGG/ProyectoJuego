@@ -32,6 +32,8 @@ var hitbox
 
 # Stats
 const meleeDMG = [10, 20, 30, 40, 50]
+const expLevel = [5, 15, 30, 50, 80]
+var actualExp = 0
 var HP = 100
 var level = 1
 
@@ -151,3 +153,11 @@ func death():
 		vel.x = 0
 	else:
 		hide()
+
+func getExp(experience):
+	actualExp += experience
+	if(actualExp >= expLevel[level - 1]):
+		level += 1
+		actualExp = 0
+		HP = 100
+		print("Subiste al nivel %d" % level)

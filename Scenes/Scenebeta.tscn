@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scenes/kirby.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/enemies/zerotu.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Scenes/DrawciaSorcerer.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/background.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/barraSalud.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Sounds/OST_level.mp3" type="AudioStream" id=10]
+[ext_resource path="res://Scenes/nightborne.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 193.313, 118.375 )
@@ -251,11 +253,20 @@ points = PoolVector2Array( 0, 30.7639, 52.4919, 31.0879, 52.4919, 38.5399, 0, 38
 } ]
 0/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 5, 45.5 )
+
 [node name="Scenebeta" type="Node2D"]
 position = Vector2( 0, -1 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -25.0
+autoplay = true
+mix_target = 1
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -267,12 +278,18 @@ motion_mirroring = Vector2( 500, 800 )
 position = Vector2( -354, -835 )
 
 [node name="skull" parent="." instance=ExtResource( 5 )]
-position = Vector2( 494, 439 )
+position = Vector2( 368, 311 )
 
 [node name="ghost" parent="." instance=ExtResource( 3 )]
 position = Vector2( 596, 190 )
 collision_mask = 9
 script = ExtResource( 7 )
+
+[node name="nightborne" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1432, 430 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 270, 441 )
@@ -296,6 +313,8 @@ texture = ExtResource( 2 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 6 )
+collision_layer = 8
+collision_mask = 7
 format = 1
 tile_data = PoolIntArray( 131072, 2, 0, 196608, 2, 65536, 262144, 2, 65536, 327680, 2, 65536, 393216, 2, 65536, 393229, 2, 0, 458752, 2, 131072, 458753, 0, 0, 458754, 0, 1, 458755, 0, 1, 458756, 0, 1, 458757, 0, 1, 458758, 0, 1, 458759, 0, 1, 458760, 0, 1, 458761, 0, 1, 458762, 0, 1, 458763, 0, 1, 458764, 0, 1, 458765, 0, 1, 458766, 0, 2, 458771, 0, 0, 458772, 0, 1, 458773, 0, 1, 458774, 0, 1, 458775, 0, 1, 458776, 0, 1, 458777, 0, 1, 458778, 0, 1, 458779, 0, 1, 458780, 0, 1, 458781, 0, 1, 458782, 0, 1, 458783, 0, 1, 458784, 0, 1, 458785, 0, 1, 458786, 0, 1, 458787, 0, 1, 458788, 0, 1, 458789, 0, 2, 524289, 0, 131072, 524290, 0, 131073, 524291, 0, 131073, 524292, 0, 131073, 524293, 0, 131073, 524294, 0, 131073, 524295, 0, 131073, 524296, 0, 131073, 524297, 0, 131073, 524298, 0, 131073, 524299, 0, 131073, 524300, 0, 131073, 524301, 0, 131073, 524302, 0, 131074, 524307, 0, 131072, 524308, 0, 131073, 524309, 0, 131073, 524310, 0, 131073, 524311, 0, 131073, 524312, 0, 131073, 524313, 0, 131073, 524314, 0, 131073, 524315, 0, 131073, 524316, 0, 131073, 524317, 0, 131073, 524318, 0, 131073, 524319, 0, 131073, 524320, 0, 131073, 524321, 0, 131073, 524322, 0, 131073, 524323, 0, 131073, 524324, 0, 131073, 524325, 0, 131074 )
 
@@ -312,6 +331,8 @@ tile_set = SubResource( 25 )
 cell_size = Vector2( 128, 128 )
 cell_quadrant_size = 64
 cell_tile_origin = 1
+collision_layer = 8
+collision_mask = 7
 format = 1
 tile_data = PoolIntArray( 917539, 0, 0, 917540, 0, 1, 917541, 0, 2, 917544, 0, 0, 917545, 0, 1, 917546, 0, 1, 917547, 0, 2, 917549, 0, 0, 917550, 0, 1, 917551, 0, 2, 983070, 0, 0, 983071, 0, 1, 983072, 0, 1, 983073, 0, 2, 1048601, 0, 0, 1048602, 0, 1, 1048603, 0, 1, 1048604, 0, 2 )
 
@@ -319,3 +340,11 @@ tile_data = PoolIntArray( 917539, 0, 0, 917540, 0, 1, 917541, 0, 2, 917544, 0, 0
 scale = Vector2( 3, 3 )
 transform = Transform2D( 3, 0, 0, 3, 0, 0 )
 player_node = NodePath("../player")
+
+[node name="paredEnemigo" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paredEnemigo"]
+position = Vector2( 1234, 432 )
+shape = SubResource( 29 )

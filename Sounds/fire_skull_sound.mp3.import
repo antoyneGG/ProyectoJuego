@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/fire_skull_sound.mp3-179244de6b4f9c69eca41ad45d89556e.mp3str"
+
+[deps]
+
+source_file="res://Sounds/fire_skull_sound.mp3"
+dest_files=[ "res://.import/fire_skull_sound.mp3-179244de6b4f9c69eca41ad45d89556e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

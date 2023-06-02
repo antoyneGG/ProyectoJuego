@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/wumpa.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/enemies/fire-skull.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Area2D.gd" type="Script" id=3]
+[ext_resource path="res://Sounds/fire_skull_sound.mp3" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 73, 63 )
@@ -94,8 +95,12 @@ shape = SubResource( 9 )
 position = Vector2( 3.33333, -23.3333 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 17 )
-frame = 6
 playing = true
+
+[node name="dmgSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -28.364
+mix_target = 1
 
 [connection signal="body_entered" from="DetectionZone" to="DetectionZone" method="_on_DetectionZone_body_entered"]
 [connection signal="body_exited" from="DetectionZone" to="DetectionZone" method="_on_DetectionZone_body_exited"]

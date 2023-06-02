@@ -9,6 +9,7 @@ var continous = 0
 var current_state = 0
 var dir = 0
 var init_pos
+onready var animatedSprite = $AnimatedSprite
 
 enum{
 	IDLE,
@@ -39,6 +40,10 @@ func _physics_process(delta):
 	vel.y += GRAV * delta
 	vel = vel.move_toward(to, ACCEL * delta)
 	vel = move_and_slide(vel, Vector2.UP)
+	if(vel.x < 0):
+		animatedSprite.flip_h = false
+	elif(vel.x > 0):
+		animatedSprite.flip_h = true
 	continous += 1
 
 func patrol():
