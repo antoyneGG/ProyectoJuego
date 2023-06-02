@@ -16,7 +16,9 @@ var salto = 0
 var current_state
 enum{
 	ATTACK,
-	MOVE
+	MOVE,
+	INV,
+	DEATH
 }
 
 # Animation
@@ -98,6 +100,10 @@ func _process(delta):
 				current_state = ATTACK
 		ATTACK:
 			attacking()
+		INV:
+			invulnerability()
+		DEATH:
+			death()
 
 func attacking():
 	animatedSprite.play("pelea")
@@ -119,7 +125,29 @@ func _on_HitBox_area_entered(area):
 	if area.get_collision_layer() == 256:
 		area.owner.take_damage(meleeDMG[level - 1])
 		
-		
+func invulnerability():
+	hide()
+	yield(get_tree().create_timer(0.2), "timeout")
+	show()
+	yield(get_tree().create_timer(0.2), "timeout")
+	hide()
+	yield(get_tree().create_timer(0.2), "timeout")
+	show()
+	current_state = MOVE
+
 # Se debe que llamar esta funcion dentro de "hurtbox para recibir el daño
-func damage_player(damage):
+func take_damage(damage):
 	HP -= damage
+	print("Auchis me pego %d de danio y me dejo con %d de vida" % [damage, HP])
+	if(HP <= 0):
+		current_state = DEATH
+	else:
+		current_state = INV
+
+func death():
+	animatedSprite.play("morirse")
+	if(animatedSprite.frame != 9):
+		vel = vel.move_toward(Vector2.ZERO, 0)
+		vel.x = 0
+	else:
+		hide()

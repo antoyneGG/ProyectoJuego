@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://Scripts/KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/player/_Attack.png" type="Texture" id=2]
@@ -10,7 +10,7 @@
 [ext_resource path="res://Sprites/player/_Fall.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 14.5, 20.5 )
+extents = Vector2( 9, 20.5 )
 
 [sub_resource type="CapsuleShape2D" id=7]
 radius = 23.0
@@ -264,16 +264,17 @@ animations = [ {
 "speed": 10.0
 } ]
 
+[sub_resource type="CapsuleShape2D" id=60]
+height = 22.0
+
 [node name="kirby" type="KinematicBody2D" groups=["player"]]
 position = Vector2( 0, -4 )
 z_as_relative = false
 collision_mask = 14
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1, 0 )
 shape = SubResource( 5 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -300,8 +301,16 @@ shape = SubResource( 7 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -19 )
 frames = SubResource( 6 )
-frame = 2
+frame = 7
 playing = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -1, 1 )
+shape = SubResource( 60 )
 
 [connection signal="area_entered" from="Position2D/HitBox" to="." method="_on_HitBox_area_entered"]
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

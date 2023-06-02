@@ -85,7 +85,7 @@ shape = SubResource( 8 )
 
 [node name="Hurtbox" type="Area2D" parent="."]
 collision_layer = 256
-collision_mask = 32
+collision_mask = 96
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 shape = SubResource( 9 )
@@ -94,8 +94,9 @@ shape = SubResource( 9 )
 position = Vector2( 3.33333, -23.3333 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 17 )
-frame = 1
+frame = 6
 playing = true
 
 [connection signal="body_entered" from="DetectionZone" to="DetectionZone" method="_on_DetectionZone_body_entered"]
 [connection signal="body_exited" from="DetectionZone" to="DetectionZone" method="_on_DetectionZone_body_exited"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]

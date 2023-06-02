@@ -87,3 +87,8 @@ func take_damage(income_dmg):
 
 func dead():
 	queue_free()
+
+
+func _on_Hurtbox_area_entered(area):
+	if area.get_collision_layer() == 64:
+		area.owner.take_damage(dmg)
