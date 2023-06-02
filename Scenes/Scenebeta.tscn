@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scenes/kirby.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/enemies/zerotu.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Tiles/Mossy Tileset/Mossy - MossyHills (1).png" type="Texture" id=6]
 [ext_resource path="res://Scenes/DrawciaSorcerer.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/background.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/barraSalud.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 193.313, 118.375 )
@@ -19,7 +20,7 @@ points = PoolVector2Array( 128, 128, 0, 128, 0, 24.7222, 128, 24.7222 )
 points = PoolVector2Array( 0, 24.7222, 128, 24.7222, 128, 128, 0, 128 )
 
 [sub_resource type="ConvexPolygonShape2D" id=9]
-points = PoolVector2Array( 0, 24.24, 128, 25.2045, 128, 128, 0, 128 )
+points = PoolVector2Array( 0, 24.6001, 128, 25.2045, 128, 128, 0, 128 )
 
 [sub_resource type="ConvexPolygonShape2D" id=10]
 points = PoolVector2Array( 11, 26, 115.167, 25.1667, 113.5, 96.8333, 21, 96.8333 )
@@ -148,6 +149,29 @@ points = PoolVector2Array( 11, 0, 114, 0, 113, 102, 12, 100 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 2/z_index = 0
+3/name = "Mossy - TileSet.png 3"
+3/texture = ExtResource( 4 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 512, 0, 256, 256 )
+3/tile_mode = 1
+3/autotile/bitmask_mode = 2
+3/autotile/bitmask_flags = [ Vector2( 0, 0 ), 432, Vector2( 0, 1 ), 54, Vector2( 1, 0 ), 216, Vector2( 1, 1 ), 27 ]
+3/autotile/icon_coordinate = Vector2( 0, 0 )
+3/autotile/tile_size = Vector2( 128, 128 )
+3/autotile/spacing = 0
+3/autotile/occluder_map = [  ]
+3/autotile/navpoly_map = [  ]
+3/autotile/priority_map = [  ]
+3/autotile/z_index_map = [  ]
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
 
 [sub_resource type="TileSet" id=11]
 0/name = "Mossy - MossyHills (1).png 0"
@@ -174,6 +198,59 @@ points = PoolVector2Array( 11, 0, 114, 0, 113, 102, 12, 100 )
 0/shapes = [  ]
 0/z_index = 0
 
+[sub_resource type="ConvexPolygonShape2D" id=26]
+points = PoolVector2Array( 75.847, 31.1294, 128, 30.7561, 128, 38.0345, 75.6604, 38.4077 )
+
+[sub_resource type="ConvexPolygonShape2D" id=27]
+points = PoolVector2Array( 0, 38.2159, 128, 38.1316, 128, 30.6069, 0, 30.6991 )
+
+[sub_resource type="ConvexPolygonShape2D" id=28]
+points = PoolVector2Array( 0, 30.7639, 52.4919, 31.0879, 52.4919, 38.5399, 0, 38.1078 )
+
+[sub_resource type="TileSet" id=25]
+0/name = "Mossy - TileSet.png 0"
+0/texture = ExtResource( 4 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 384, 384, 128 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 2
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 48, Vector2( 1, 0 ), 56, Vector2( 1, 1 ), 6, Vector2( 2, 0 ), 24, Vector2( 2, 1 ), 7, Vector2( 3, 0 ), 504, Vector2( 3, 1 ), 7, Vector2( 4, 0 ), 216, Vector2( 4, 1 ), 3 ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 128, 128 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 26 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 26 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 27 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 28 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
 [node name="Scenebeta" type="Node2D"]
 position = Vector2( 0, -1 )
 __meta__ = {
@@ -187,7 +264,7 @@ motion_scale = Vector2( 0.4, 0.2 )
 motion_mirroring = Vector2( 500, 800 )
 
 [node name="Sprite" parent="ParallaxBackground/ParallaxLayer" instance=ExtResource( 8 )]
-position = Vector2( -356, -834 )
+position = Vector2( -354, -835 )
 
 [node name="skull" parent="." instance=ExtResource( 5 )]
 position = Vector2( 494, 439 )
@@ -220,7 +297,7 @@ texture = ExtResource( 2 )
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 6 )
 format = 1
-tile_data = PoolIntArray( 131072, 2, 0, 196608, 2, 65536, 262144, 2, 65536, 327680, 2, 65536, 393216, 2, 65536, 458752, 2, 131072, 458753, 0, 0, 458754, 0, 1, 458755, 0, 1, 458756, 0, 1, 458757, 0, 1, 458758, 0, 1, 458759, 0, 1, 458760, 0, 1, 458761, 0, 1, 458762, 0, 1, 458763, 0, 1, 458764, 0, 1, 458765, 0, 1, 458766, 0, 1, 458767, 0, 1, 458768, 0, 1, 458769, 0, 1, 458770, 0, 1, 458771, 0, 1, 458772, 0, 1, 458773, 0, 1, 458774, 0, 1, 458775, 0, 1, 458776, 0, 1, 458777, 0, 1, 458778, 0, 1, 458779, 0, 1, 458780, 0, 1, 458781, 0, 1, 458782, 0, 1, 458783, 0, 1, 458784, 0, 1, 458785, 0, 1, 458786, 0, 1, 458787, 0, 1, 458788, 0, 1, 458789, 0, 2, 524289, 0, 131072, 524290, 0, 131073, 524291, 0, 131073, 524292, 0, 131073, 524293, 0, 131073, 524294, 0, 131073, 524295, 0, 131073, 524296, 0, 131073, 524297, 0, 131073, 524298, 0, 131073, 524299, 0, 131073, 524300, 0, 131073, 524301, 0, 131073, 524302, 0, 131073, 524303, 0, 131073, 524304, 0, 131073, 524305, 0, 131073, 524306, 0, 131073, 524307, 0, 131073, 524308, 0, 131073, 524309, 0, 131073, 524310, 0, 131073, 524311, 0, 131073, 524312, 0, 131073, 524313, 0, 131073, 524314, 0, 131073, 524315, 0, 131073, 524316, 0, 131073, 524317, 0, 131073, 524318, 0, 131073, 524319, 0, 131073, 524320, 0, 131073, 524321, 0, 131073, 524322, 0, 131073, 524323, 0, 131073, 524324, 0, 131073, 524325, 0, 131074 )
+tile_data = PoolIntArray( 131072, 2, 0, 196608, 2, 65536, 262144, 2, 65536, 327680, 2, 65536, 393216, 2, 65536, 393229, 2, 0, 458752, 2, 131072, 458753, 0, 0, 458754, 0, 1, 458755, 0, 1, 458756, 0, 1, 458757, 0, 1, 458758, 0, 1, 458759, 0, 1, 458760, 0, 1, 458761, 0, 1, 458762, 0, 1, 458763, 0, 1, 458764, 0, 1, 458765, 0, 1, 458766, 0, 2, 458771, 0, 0, 458772, 0, 1, 458773, 0, 1, 458774, 0, 1, 458775, 0, 1, 458776, 0, 1, 458777, 0, 1, 458778, 0, 1, 458779, 0, 1, 458780, 0, 1, 458781, 0, 1, 458782, 0, 1, 458783, 0, 1, 458784, 0, 1, 458785, 0, 1, 458786, 0, 1, 458787, 0, 1, 458788, 0, 1, 458789, 0, 2, 524289, 0, 131072, 524290, 0, 131073, 524291, 0, 131073, 524292, 0, 131073, 524293, 0, 131073, 524294, 0, 131073, 524295, 0, 131073, 524296, 0, 131073, 524297, 0, 131073, 524298, 0, 131073, 524299, 0, 131073, 524300, 0, 131073, 524301, 0, 131073, 524302, 0, 131074, 524307, 0, 131072, 524308, 0, 131073, 524309, 0, 131073, 524310, 0, 131073, 524311, 0, 131073, 524312, 0, 131073, 524313, 0, 131073, 524314, 0, 131073, 524315, 0, 131073, 524316, 0, 131073, 524317, 0, 131073, 524318, 0, 131073, 524319, 0, 131073, 524320, 0, 131073, 524321, 0, 131073, 524322, 0, 131073, 524323, 0, 131073, 524324, 0, 131073, 524325, 0, 131074 )
 
 [node name="Decoration" type="TileMap" parent="."]
 position = Vector2( -5, 5 )
@@ -228,3 +305,17 @@ tile_set = SubResource( 11 )
 collision_layer = 0
 collision_mask = 0
 format = 1
+
+[node name="platform" type="TileMap" parent="."]
+scale = Vector2( 0.2, 0.2 )
+tile_set = SubResource( 25 )
+cell_size = Vector2( 128, 128 )
+cell_quadrant_size = 64
+cell_tile_origin = 1
+format = 1
+tile_data = PoolIntArray( 917539, 0, 0, 917540, 0, 1, 917541, 0, 2, 917544, 0, 0, 917545, 0, 1, 917546, 0, 1, 917547, 0, 2, 917549, 0, 0, 917550, 0, 1, 917551, 0, 2, 983070, 0, 0, 983071, 0, 1, 983072, 0, 1, 983073, 0, 2, 1048601, 0, 0, 1048602, 0, 1, 1048603, 0, 1, 1048604, 0, 2 )
+
+[node name="barraSalud" parent="." instance=ExtResource( 9 )]
+scale = Vector2( 3, 3 )
+transform = Transform2D( 3, 0, 0, 3, 0, 0 )
+player_node = NodePath("../player")
